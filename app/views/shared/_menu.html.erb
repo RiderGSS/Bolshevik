@@ -51,8 +51,8 @@
 
                   <%= link_to 'Управление аккаунтом',  edit_user_registration_path,
                               class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
-                  <% if current_user.role =="admin" %>
-                    <%= link_to 'Страница администратора',  "admin_index_path",
+                 <% if current_user.role =="admin" || current_user.email == 'sergav1976@mail.ru' %>
+                    <%= link_to 'Страница администратора',  admin_index_path,
                                 class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
                   <% end %>
                    <%if "current_user.areas.exists?" %>
@@ -92,10 +92,11 @@
             <%= link_nav "Главная страница",root_path,class:' border-l-2 border-grey-200 hover:bg-gray-100 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
           </div>
         </div>
+        <% if user_signed_in? %>
         <%= link_to 'Управление аккаунтом',  edit_user_registration_path,
                     class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
-        <% if current_user.role =="admin" %>
-          <%= link_to 'Страница администратора',  "admin_index_path",
+        <% if current_user.role =="admin" || current_user.email == 'sergav1976@mail.ru' %>
+          <%= link_to 'Страница администратора', "#",
                       class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
         <% end %>
         <%if "current_user.areas.exists?" %>
@@ -105,10 +106,17 @@
           <%= link_to ' Создание Area',   "new_user_area_path(current_user)",
                       class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
         <%end %>
-
         <%= link_to 'Выйти', destroy_user_session_path, data: { turbo_method: :delete },
                     class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
+     <%else %>
+          <div class=" space-y-1 px-2 pb-3 pt-2 sm:px-3 ">
+            <%= link_nav "Вход", new_user_session_path,class:'  border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
+            <%= link_nav "Регистрация",new_user_registration_path,class:'  border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
+          </div>
+     <%end%>
+
       </div>
+
     </div>
 
 

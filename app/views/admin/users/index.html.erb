@@ -1,0 +1,27 @@
+<% provide(:title, t(:'users')) %>
+<% currently_at t(:'users') %>
+
+
+<div class="flex bg-gray-100 ">
+
+
+  <div class=" w-full mx-8 bg-gray-100 relative overflow-x-auto">
+    <table class="w-full bg-gray-100 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="border-b-4 border-gray-700 text-xs bg-blue-100 text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="  px-6 py-3 text-center">Пользователь</th>
+        <th scope="col" class="px-6  py-3 text-center">Роль</th>
+        <th scope="col" class="px-6  py-3 text-center">Верификация</th>
+        <th scope="col" class="px-6 py-3 text-center">Дата регистрации</th>
+        <th scope="col" class="px-6 py-3 text-center">Номер участка</th>
+
+      </tr>
+      </thead>
+      <tbody class="bg-gray-100">
+      <%= render @users %>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<tr class=" border-b-2 px-2 dark:bg-gray-800 dark:border-gray-800">
+  <th scope="row" class="px-6 py-4 font-medium text-gray-800 whitespace-nowrap dark:text-white">
+    <%=user.email %>
+  </th>
+  <td class="px-6 py-4 bg-gray-100 text-center "><%= user.role %></td>
+  <td class="px-6 py-4 bg-gray-100 text-center "><%= user.verificate %></td>
+  <td class="px-6 py-4 bg-gray-100 text-center "><%= user.formatted_created_at %></td>
+
+  <td class="bg-gray-100">
+    <%if "user.areas.count" == 0 %>
+      <p class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
+        НЕТ</p>
+    <%else %>
+      <p class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
+        <%= link_to 'Участок', "#" %></p>
+    <%end %>
+  </td>
+
+
+  <td class="bg-gray-100">
+    <p class="  text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
+      <%= link_to 'Редактировать', edit_admin_user_path(user) %></p>
+  </td>
+  <td class="bg-gray-100">
+    <p class="  text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
+      <%= link_to 'Удалить', admin_user_path(user), data: {turbo_method: :delete, turbo_confirm: "you_sure"} %> </p>
+  </td>
+
+</tr>
