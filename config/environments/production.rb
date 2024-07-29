@@ -29,6 +29,28 @@ Rails.application.configure do
   # Do not fall back to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  config.action_mailer.default_url_options = { host: 'bolshevik.onrender.com' }
+  config.action_mailer.delivery_method = :smtp  # :letter_opener_web
+  config.action_mailer.smtp_settings = {
+    address:         'smtp.gmail.com',
+    port:            '587',
+    domain:          'mail.ru',
+    user_name:       'sergav1976@gmail.com',
+    #password:       '99pMnvk0pdgki4mnFUnL',
+    password:	'vbho vxad kmrc pcny',
+    authentication:  'plain',
+    enable_starttls: true,
+    open_timeout:    5,
+    read_timeout:    5 }
+
+  # Store uploaded files on the local file system (see config/storage.yml for options).
+  #config.active_storage.service = :local
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_caching = true
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
