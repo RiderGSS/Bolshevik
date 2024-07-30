@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_25_091454) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_29_064450) do
+  create_table "areas", force: :cascade do |t|
+    t.string "area"
+    t.string "name"
+    t.string "surname"
+    t.string "patronymic"
+    t.string "telephone"
+    t.string "kadastr"
+    t.string "plot_area"
+    t.string "address_area"
+    t.boolean "member"
+    t.boolean "verificate"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area"], name: "index_areas_on_area", unique: true
+    t.index ["user_id"], name: "index_areas_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -31,4 +49,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_25_091454) do
     t.index ["role"], name: "index_users_on_role"
   end
 
+  add_foreign_key "areas", "users"
 end

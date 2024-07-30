@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'admin/index'
 
 
-  resources :users
+  resources :users do
+    resources :areas
+  end
 
 
 

@@ -8,3 +8,22 @@ en:
     password: "Forgot your password?"
     registration: "Sign up"
     login: "Log in"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Validation failed: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Cannot delete record because a dependent %{record} exists
+          has_many: Cannot delete record because dependent %{record} exist
+        models:
+          areas:
+            attributes:
+              name: "Name"
+              area: "Area"
+              surname: "Surname"
+              patronymic: "Patronimic"
+              telephone: "Telephone"
+              kadastr: "Cadastral number"
+              plot_area: "Plot area"
+              address_area: "The address of the site"
+              member: "DNT Member"

@@ -1,0 +1,16 @@
+en:
+  activerecord:
+       models:
+         area: Area
+         user: User
+       attributes:
+         area:
+           name: "Name"
+           area: "Area"
+           surname: "Surname"
+           patronymic: "Patronimic"
+           telephone: "Telephone"
+           kadastr: "Cadastral number"
+           plot_area: "Plot area"
+           address_area: "The address of the site"
+           member: "DNT Member"

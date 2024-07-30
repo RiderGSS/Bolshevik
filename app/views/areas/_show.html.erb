@@ -1,0 +1,18 @@
+<%= turbo_frame_tag "show_area" do %>
+
+  <div class=" mx-11 grid   md:grid-cols-3 justify-items-start  gap-1 place-items-stretch p-4 rounded-md border-x-2 border-gray-400 shadow-md shadow-rose-600 ">
+   <div class=" w-full col-span-1 md:col-span-3  px-2 rounded-lg border-l border-b border-gray-400" > <p> Данные собственника(....)</p>  </div>
+   <div class=" w-full flex col-span-1 md:col-span-2 px-2 rounded-lg border-l border-b border-gray-400 "  >ФИО: <p class="italic px-2"> <%=@area.surname %> <%=@area.name %> <%=@area.patronymic %></p> </div>
+   <div class="w-full  px-2 rounded-lg border-l border-b border-gray-400"   >
+     Телефон:<p class="italic"> <%=@area.telephone %> </p></div>
+   <div class="w-full  px-2 rounded-lg border-l border-b border-gray-400"   >Адрес: <%=@area.address_area %> </div>
+   <div class="w-full  px-2 rounded-lg border-l border-b border-gray-400"  >Кадастровый номер: <%=@area.kadastr %> </div>
+   <div class="w-full  px-2 rounded-lg border-l border-b border-gray-400"  >Площадь: <%=@area.plot_area %> </div>
+
+   <div class="w-full col-span-1 md:col-span-3 flex justify-between" >
+      <div class="  col-span-1 md:col-span-3 mr-4  px-2 rounded-lg border-l border-gray-400 hover:shadow-md hover:shadow-green-600" > <p> <%=link_to "Undo", user_path(current_user)%> </p>   </div>
+      <div class=" flex justify-between  col-span-1 md:col-span-3 mr-4  px-2 rounded-lg border-l border-gray-400 hover:shadow-md hover:shadow-green-600" > <p> <%=link_to "edit",  edit_user_area_path(@area),data:{turbo_frame: dom_id(Area.new, :edit)}%> </p></div>
+
+   </div>
+  </div>
+<% end %>

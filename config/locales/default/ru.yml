@@ -1,0 +1,7 @@
+ru:
+  table_no_save: 'Данные не сохранены'
+  links:
+    login: Вход
+    registration: Регистрация
+    password: Пароль
+    confirmation: "Подтверждение регистрации"

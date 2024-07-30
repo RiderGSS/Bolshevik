@@ -1,0 +1,16 @@
+ru:
+  activerecord:
+    models:
+      area: Участок
+      user: Пользователь
+    attributes:
+      area:
+        area: Участок
+        name: Имя
+        surname: Фамилия
+        kadastr: 'Кадастровый номер'
+        patronymic: "Patronimic"
+        telephone: "Телефон"
+        plot_area: "Площадь участка"
+        member: "Член ДНТ"
+        address_area: 'Адрес участка'
