@@ -12,3 +12,5 @@ en:
   forgot1: 'Forgot your password ?'
   forgot2: 'Enter the Email address where to send the password recovery instructions'
   forgot3: 'Send instructions'
+  delete: "Delete"
+  admin: Administrator

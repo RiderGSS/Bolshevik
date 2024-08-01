@@ -10,3 +10,4 @@ en:
     reset_pass1: 'Someone has requested a link to change your password. You can do this through the link below.'
     reset_pass2: "If you didn't request this, please ignore this email."
     reset_pass3: "Your password won't change until you access the link above and create a new one."
+    reset_pass4: "We're contacting you to notify you that your password has been changed."
