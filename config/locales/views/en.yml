@@ -8,3 +8,7 @@ en:
   log_in: Login
   password_lenght: 'Password (minimum 6 characters)'
   remember_me: 'Remember me'
+  recover_pass: 'Recover password'
+  forgot1: 'Forgot your password ?'
+  forgot2: 'Enter the Email address where to send the password recovery instructions'
+  forgot3: 'Send instructions'
