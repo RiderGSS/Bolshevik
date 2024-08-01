@@ -8,22 +8,26 @@
 
   <td class="bg-gray-100">
     <%if "user.areas.count" == 0 %>
-      <p class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
+      <p class="px-6 py-4 bg-gray-100 text-center ">
         НЕТ</p>
     <%else %>
-      <p class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
-        <%= link_to 'Участок', "#" %></p>
+      <p class="px-6 py-4 bg-gray-100 text-center ">
+      <%= 'Участок № '+ user.areas.first.area %> </p>
     <%end %>
   </td>
 
 
   <td class="bg-gray-100">
-    <p class="  text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
-      <%= link_to 'Редактировать', edit_admin_user_path(user) %></p>
+     <%=link_to( edit_admin_user_path(user),class:'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
+        <%=picture_tag("edit.png",class:'w-6 h-6 ') %>
+
+    <%end %>
+
   </td>
   <td class="bg-gray-100">
     <p class="  text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-md text-sm px-5 py-2.5 text-center mx-2 ">
       <%= link_to 'Удалить', admin_user_path(user), data: {turbo_method: :delete, turbo_confirm: "you_sure"} %> </p>
   </td>
+
 
 </tr>

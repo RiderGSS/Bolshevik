@@ -14,3 +14,8 @@ ru:
         plot_area: "Площадь участка"
         member: "Член ДНТ"
         address_area: 'Адрес участка'
+      user:
+        email: 'Адрес электронной почты'
+        role: 'Роль пользователя'
+        password: 'Пароль'
+        password_confirmation: 'Повтор пароля'

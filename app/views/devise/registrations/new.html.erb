@@ -1,48 +1,50 @@
-<% provide(:title, "Новый пользователь") %>
-<% currently_at "Новый пользователь" %>
+<% provide(:title, t(:new_user)) %>
+<% currently_at t(:new_user) %>
 
 
-
+  <% flash[:notice]= t :new_user %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class="flex space-x-4 flex-col md:flex-row min-h-full  justify-center px-3 py-5 lg:px-6">
+    <div class="flex  flex-col md:flex-row min-h-full  justify-center px-3 py-5 lg:px-6">
      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
        <%= render "devise/shared/error_messages", resource: resource %>
      </div>
      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <h2 class="mt-10 mb-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Создайте новый аккаунт</h2>
-
-
 
       <%= content_tag :div, class:"relative z-0 w-full mb-5 group" do%>
         <%= f.email_field :email, autocomplete: "почта", data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
         <%= f.label :email,data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
-         transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
-         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+         transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
+         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8" %>
       <% end %>
 
       <%= content_tag :div, class:"relative z-0 w-full mb-5 group" do%>
         <%= f.password_field :password,  data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
         <%= f.label "Пароль (минимум шесть символов)" ,data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
-         transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
-         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+         transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
+         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8" %>
       <% end %>
 
       <%= content_tag :div, class:"relative z-0 w-full mb-5 group" do%>
         <%= f.password_field :password_confirmation,  data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
         <%= f.label "Повтор пароля " ,data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
-         transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
-         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+         transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
+         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8" %>
       <% end %>
 
-      <div class=" flex justify-center rounded-md border-gray-300 border-b-2 ">
+      <div class=" flex  justify-center rounded-md border-gray-300 border-b-2 ">
         <%= f.submit "Регистрация",  class: " mt-3  rounded-md border-t-2  px-3 py-1.5 text-sm font-semibold leading-6 text-gray-400 transition duration-300  ease-in-out  hover:w-full hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         %>
+
       </div>
-
-
+       <div class=" flex mt-2 justify-center rounded-md border-gray-300 border-t-2 ">
+         <%=link_to( :back,class:'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
+           <%=picture_tag("back.png",class:'w-6 h-6 ') %>
+           <%= content_tag(:p, t(:back_to),class:'mx-3') %>
+         <%end %>
+       </div>
 
 
   </div>
