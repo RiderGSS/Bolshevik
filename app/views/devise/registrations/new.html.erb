@@ -1,10 +1,9 @@
 <% provide(:title, t(:new_user)) %>
 <% currently_at t(:new_user) %>
 
-
-  <% flash[:notice]= t :new_user %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class="flex  flex-col md:flex-row min-h-full  justify-center px-3 py-5 lg:px-6">
+   <div class="flex justify-center "> <h1> <%= t(:new_user)%> </h1> </div>
+     <div class="flex  flex-col md:flex-row min-h-full  justify-center px-3 py-5 lg:px-6">
      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
        <%= render "devise/shared/error_messages", resource: resource %>
      </div>
@@ -39,7 +38,7 @@
         %>
 
       </div>
-       <div class=" flex mt-2 justify-center rounded-md border-gray-300 border-t-2 ">
+       <div class=" flex mt-2 justify-center ">
          <%=link_to( :back,class:'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
            <%=picture_tag("back.png",class:'w-6 h-6 ') %>
            <%= content_tag(:p, t(:back_to),class:'mx-3') %>
@@ -49,6 +48,6 @@
 
   </div>
      <div class="sm:mx-auto sm:w-full sm:max-w-sm">  </div>
-    </div>
+   </div>
   <% end %>
 
