@@ -5,3 +5,6 @@ en:
   save: Save
   new_user: 'New User'
   back_to: 'Back'
+  log_in: Login
+  password_lenght: 'Password (minimum 6 characters)'
+  remember_me: 'Remember me'

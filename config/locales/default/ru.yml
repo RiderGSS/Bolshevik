@@ -3,5 +3,5 @@ ru:
   links:
     login: Вход
     registration: Регистрация
-    password: Пароль
+    password: 'Сменить пароль'
     confirmation: "Подтверждение регистрации"
