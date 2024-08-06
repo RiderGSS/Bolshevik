@@ -5,9 +5,11 @@
   end
    def verificate
      @user.update(verificate: true)
+     UserMailer.with(user: @user).welcome_email("verificate_true_email").deliver_later
+     redirect_to admin_index_path
    end
    def email
-     UserMailer.with(user: @user).welcome_email("verificate_email").deliver_later
+     UserMailer.with(user: @user).welcome_email("verificate_false_email").deliver_later
      redirect_to admin_verificate_index_path
    end
    def show

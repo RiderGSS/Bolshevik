@@ -14,3 +14,15 @@ ru:
   forgot3: 'Выслать инструкцию'
   delete: "Удалить"
   admin: Администратор
+  admin_page: Страница администратора
+  verificate_page: Страница верификации
+  name: Имя
+  surname: Фамилия
+  patronymic: Отчество
+  telephone: Телефон
+  kadstr: "Кадастровый номер"
+  area: "Номер участка"
+  user: Пользователь
+  no_data: "Нет данных"
+  verificate: "Верификация"
+  verificate_1: "Пользователь не верифицирован"

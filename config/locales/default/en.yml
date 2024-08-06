@@ -11,3 +11,12 @@ en:
     reset_pass2: "If you didn't request this, please ignore this email."
     reset_pass3: "Your password won't change until you access the link above and create a new one."
     reset_pass4: "We're contacting you to notify you that your password has been changed."
+    welcome: "Welcome to DNT Bolshevick"
+    welcome_1: "Welcome to Bolshevik.onrender.com ,"
+    welcome_2: "You have successfully signed up to example.com,
+  your username is:"
+    welcome_3: " To login to the site, just follow this link:"
+    welcome_4: "Thanks for joining and have a great day!"
+    verificate: "To pass verification, you need to fill in the data for the site"
+    confirmation: "You can confirm your account email through the link below: "
+    confirmation_1: "Confirm my account"

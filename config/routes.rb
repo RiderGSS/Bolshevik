@@ -1,20 +1,27 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users
+    resources :users do
+     get 'email', on: :member
+     get 'verificate', on: :member
+     resources :areas
+    end
+    get 'verificate/index'
+    get 'index'
   end
 
 
 
 
   devise_for :users
-  root 'home#index'
-  get 'admin/index'
+
 
 
   resources :users do
-    resources :areas
+     resources :areas
   end
 
 
+  root 'home#index'
 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

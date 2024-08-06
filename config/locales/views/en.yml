@@ -14,3 +14,15 @@ en:
   forgot3: 'Send instructions'
   delete: "Delete"
   admin: Administrator
+  admin_page: "Admin page"
+  verificate_page: "Verificate page"
+  name: Name
+  surname: Surname
+  patronymic: Patronimic
+  telephone: Telephone
+  kadstr: 'Cadastral number'
+  area: Area
+  user: User
+  no_data: "No data available"
+  verificate: "Verificate"
+  verificate_1: "The user is not verified"
