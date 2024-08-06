@@ -30,3 +30,5 @@ group :development do
 end
 gem "tailwindcss-rails", "~> 2.6"
 gem "devise", "~> 4.9"
+
+gem "rondo_form", "~> 0.2.6"

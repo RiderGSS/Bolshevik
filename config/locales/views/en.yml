@@ -25,4 +25,5 @@ en:
   user: User
   no_data: "No data available"
   verificate: "Verificate"
-  verificate_1: "The user is not verified"
+  verificate_1: "The users is not verified"
+  pers_akk: "Personal account"

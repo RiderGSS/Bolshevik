@@ -26,10 +26,10 @@
                 <%= link_to 'Страница администратора',  admin_index_path,
                             class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
               <% end %>
-
+              <%if current_user.areas.exists? %>
                 <%= link_to 'Личный кабинет',   user_path(current_user),
                             class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
-              <%if current_user.areas.exists? %>
+              <%else%>
                 <%= link_to ' Создание Area',   new_user_area_path(current_user),
                             class: "block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"%>
               <%end %>

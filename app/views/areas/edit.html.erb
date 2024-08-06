@@ -3,6 +3,7 @@
 
 <div class="flex justify-evenly grow mx-8 bg-gray-100 ">
   <div class=" w-1/5">  <h1 class="text-2xl text-justify text-blue-400 "> Пользователь  <%= @user.email %> </h1> </div>
+  <div class=" flex justify-center"><%= render 'shared/errors', object: @area %> </div>
   <div class=" flex min-h-full w-4/5 flex-col justify-center px-3 py-5 lg:px-6">
     <div class="flex font-serif block justify-center font-semibold text-indigo-600 border-indigo-600 border-b-4 ">
       <h1> Редактировать участок </h1></div>

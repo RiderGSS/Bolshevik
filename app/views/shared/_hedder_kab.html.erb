@@ -1,0 +1,12 @@
+<div class=" max-sm:hidden md:h-32 md:w-3/5 items-center flex justify-center  mb-4 rounded bg-gray-50 dark:bg-gray-800">
+  <p> <%= t(:'pers_akk') %> </p>
+</div>
+<%= content_tag :div,
+                class: "w-full md:h-32 md:w-2/5 flex flex-col  items-center justify-center  mb-4 rounded bg-gray-50 dark:bg-gray-800" do%>
+  <%=link_to  user_area_path(@area) do %>
+    <%=content_tag :div,class: "md:hidden" do%>  Личный кабинет садовода  <%end %>
+    <%=content_tag :div do%>   Пользователь: <%= current_user.email%>  <%end %>
+    <%=content_tag :div do%>  <p> <%= @area.surname  %> <%= @area.name  %> <%= @area.patronymic  %> </p>  <%end %>
+    <%=content_tag :div do%>   Номер участка <%= @area.area  %>  <%end %>
+  <% end %>
+<%end %>
