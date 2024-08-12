@@ -1,0 +1,50 @@
+  <div class=" border-2 rounded-lg shadow-xl mx-8 my-2" >
+
+    <%= form_for [:admin, poll] do |f| %>
+      <div class=" flex  w-full justify-center">
+        <p class="text-1xl text-gray-700  "> <%= t(:title_poll) %> </p>
+      </div>
+      <div class=" flex  w-full justify-center">
+        <%= render 'shared/errors', object: poll %>
+      </div>
+      <div class="flex  w-full flex-row my-2 ">
+        <div class="w-full mx-4 grid" > <%= f.text_area :topic, rows: 3, required: true, class: 'w-full px-8 rounded-lg',placeholder:'Введите текст голосования' %>
+        </div>
+      </div>
+      <div class=" flex  w-full justify-center">
+        <p class="text-1xl text-gray-700  "><%= t(:answer) %></p>
+      </div>
+
+      <div class="my-2 x-4" data-controller="nested-rondo" data-nested-rondo-field-class-value="task-field">
+        <div data-nested-rondo-target="fieldContain">
+          <%= f.fields_for :vote_options do |options_form| %>
+            <%= render 'vote_option_fields', f: options_form %>
+          <% end %>
+        </div>
+        <div class="flex border-gray-300 justify-end border-t-2 mx-4 py-2">
+          <%= link_to_add_association '+', f, :vote_options,
+                                      class: 'px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white' %>
+        </div>
+
+      </div>
+
+
+
+      <div class="flex mt-2 justify-end xs:mt-0">
+        <!-- Buttons -->
+        <button class="flex items-center justify-center px-4 h-10 text-base font-medium text-white bg-gray-100 rounded-s hover:bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          <%=link_to( admin_polls_path,class:'flex items-center justify-center px-4 h-10 text-base font-medium text-red-500  hover:bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',) do %>
+            <%=picture_tag("back.png",class:'w-6 h-6 ') %>
+            <%= content_tag(:p, t(:return),class:'ml-3') %>
+          <%end %>
+        </button>
+        <button class="flex items-center justify-center px-4 h-10 text-base font-medium text-red-500 bg-gray-100 border-0 border-s border-gray-700 rounded-e hover:bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          <%= f.submit  :type => :image, :src => image_path("save.png") %>
+          <p> <%= t(:'button.save') %></p>
+        </button>
+      </div>
+
+      </div>
+
+    <% end %>
+</div>

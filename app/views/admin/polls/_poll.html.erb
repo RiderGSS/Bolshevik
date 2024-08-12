@@ -1,0 +1,42 @@
+
+  <div class=" border-2 rounded-lg shadow-xl mx-8 my-2" >
+    <div class=" flex  w-full justify-center">
+      <p class="text-1xl text-blue-700  "><%= t(:title_poll) %></p>
+    </div>
+    <div class=" grow  bg-white  ">
+      <p class=" pl-8  h-12 text-justify font-serif "><%= poll.topic %></p>
+    </div>
+    <div class=" flex  w-full justify-center">
+      <p class="text-1xl text-blue-700  "> <%= t(:answer) %> </p>
+    </div>
+    <div class=" grow  bg-white  ">
+      <ul class=" pl-16 max-w-md space-y-1 text-gray-500 list-inside dark:text-gray-400">
+        <% poll.vote_options.each do |option| %>
+          <li class="flex items-center">
+            <svg class="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+            </svg>
+            <%= option.title  %>
+          </li>
+        <%end %>
+      </ul>
+    </div>
+
+
+    <div class=" flex justify-end mx-8">
+      <div class="inline-flex  rounded-md shadow-sm">
+        <%= link_to t(:'button.edit'), edit_admin_poll_path(poll),
+                    class:"px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white"
+        %>
+
+        <%=link_to 'Delete', admin_poll_path(poll),
+                   class:"px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white",
+                   data: { turbo_method: :delete }%>
+      </div>
+
+
+
+
+    </div>
+  </div>
+

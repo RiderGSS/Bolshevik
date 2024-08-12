@@ -1,4 +1,13 @@
 en:
+  button:
+    new: New
+    edit: Edit
+    save: Save
+  flash:
+    gr_poll: "Poll was created!"
+    ad_polls: "Creation  Editing polls"
+    new_poll: "New poll"
+    edit_poll: "Edit poll"
   table_no_save: 'The data is not saved'
   links:
     login: LogIn

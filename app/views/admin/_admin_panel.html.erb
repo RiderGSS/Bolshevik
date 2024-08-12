@@ -11,7 +11,7 @@
       </li>
       <li>
         <%= content_tag :div, class:['',{"border-b-4 border-indigo-500 ": link_admin("Опросы",link_page )}] do%>
-          <%=link_to( "admin_polls_path",class:'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
+          <%=link_to( admin_polls_path,class:'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
             <%=picture_tag("poll.png",class:'w-6 h-6 ') %>
             <%= content_tag(:span, 'Опросы', class:["flex-1 ms-3 whitespace-nowrap",{"text-blue-400": link_admin("Опросы",link_page )}]) %>
             <%= content_tag(:span, "Новое" , class:["inline-flex items-center justify-center px-2 ms-3 text-sm font-medium  bg-gray-100

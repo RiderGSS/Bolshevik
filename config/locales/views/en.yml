@@ -27,3 +27,8 @@ en:
   verificate: "Verificate"
   verificate_1: "The users is not verified"
   pers_akk: "Personal account"
+  poll: "Polls/Voting"
+  new_poll: "New poll"
+  return: "Return"
+  title_poll: "The topic of the poll"
+  answer: "Answer options"

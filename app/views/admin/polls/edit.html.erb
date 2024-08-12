@@ -1,0 +1,16 @@
+
+<% provide(:title, t(:'poll')) %>
+<% currently_at t(:'poll') %>
+<%currently_admin t(:'poll')%>
+<%=flash[:notice] = t(:'flash.edit_polls') %>
+
+
+<div class="flex min-h-full flex-col justify-center px-3 py-5 lg:px-6">
+
+
+  <div class="border-2 px-8">
+    <%= render 'form', poll: @poll %>
+
+  </div>
+
+</div>

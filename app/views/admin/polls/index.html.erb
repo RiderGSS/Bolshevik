@@ -1,0 +1,22 @@
+<% provide(:title, t(:'poll')) %>
+<% currently_at t(:'poll') %>
+<%currently_admin t(:'poll')%>
+
+<%=flash[:notice] = t(:'flash.ad_polls') %>
+<div class="flex bg-gray-100 ">
+<%= yield :admin_panel %>
+  <div class="  grow bg-gray-100 ">
+
+      <%= render @polls %>
+
+
+      <div class=" flex mt-2 justify-end mr-10 ">
+        <%=link_to( new_admin_poll_path,class:'flex border-2 rounded-lg shadow-xl  items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
+          <%=picture_tag("new.png",class:'w-6 h-6 ') %>
+          <%= content_tag(:p, t(:'button.new'),class:'mx-3') %>
+        <%end %>
+      </div>
+
+    </div>
+  </div>
+</div>

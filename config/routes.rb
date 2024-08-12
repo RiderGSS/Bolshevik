@@ -5,6 +5,7 @@ Rails.application.routes.draw do
      get 'verificate', on: :member
      resources :areas
     end
+    resources :polls
     get 'verificate/index'
     get 'index'
   end
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
 
 
   root 'home#index'
+  resources :polls,only: %i[index show]
+  resources :votes, only: [:create]
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

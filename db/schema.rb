@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_29_064450) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_07_034325) do
   create_table "areas", force: :cascade do |t|
     t.string "area"
     t.string "name"
@@ -27,6 +27,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_064450) do
     t.datetime "updated_at", null: false
     t.index ["area"], name: "index_areas_on_area", unique: true
     t.index ["user_id"], name: "index_areas_on_user_id"
+  end
+
+  create_table "polls", force: :cascade do |t|
+    t.text "topic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,5 +55,26 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_064450) do
     t.index ["role"], name: "index_users_on_role"
   end
 
+  create_table "vote_options", force: :cascade do |t|
+    t.string "title"
+    t.integer "poll_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["poll_id"], name: "index_vote_options_on_poll_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "vote_option_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_votes_on_user_id"
+    t.index ["vote_option_id", "user_id"], name: "index_votes_on_vote_option_id_and_user_id", unique: true
+    t.index ["vote_option_id"], name: "index_votes_on_vote_option_id"
+  end
+
   add_foreign_key "areas", "users"
+  add_foreign_key "vote_options", "polls"
+  add_foreign_key "votes", "users"
+  add_foreign_key "votes", "vote_options"
 end
