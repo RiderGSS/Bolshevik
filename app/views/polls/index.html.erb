@@ -2,37 +2,48 @@
 <% currently_at t(:poll) %>
 
   <% @polls.each do |poll| %>
-  <div class="flex  mx-8 my-2 h-52 w-full  ">
-    <div class="flex flex-col justify-between    w-1/3 bg-gray-100 border-2 border-orange-500 " >
-      <div class=" border-2 border-orange-500  w-full h-24"><p> <%= poll.topic %> </p></div>
-       <div  class=" flex justify-between items-center my-2.5 mx-2 border-2 border-orange-500  w-full h-18" >
-         <div class=" flex flex-col  border-2 border-orange-500"  > <p> Дата сщздания</p> <%= poll.formatted_created_at %> </div>
-         <div class=" flex flex-row mr-4 hover:bg-gray-500"> jkjcjdfnm
-              <%=link_to(poll_path(poll.id),class:' flex size-8 items-center place-content-evenly rounded-full   hover:ring-4  ',) do %>
-             <%=picture_tag("poll.png",class:'h-8 w-8') %>
-           <% end %>
+  <div class="flex flex-col md:flex-row  gap-1 p-2 md:h-56 w-full shadow-md  ">
+    <div class="flex flex-col justify-between p-2  w-full md:w-1/3 bg-gray-100  " >
+      <div class=" flex justify-center"> <%= t(:title_poll) %> </div>
+      <div class=" bg-white shadow-inner  border-2 border-gray-300  w-full h-24"><p class=" p-2"> <%= poll.topic %> </p></div>
+       <div  class=" flex justify-between items-center my-2.5 px-2   w-full h-18" >
+         <div class=" flex flex-col font-serif  "  > <p> <%= t(:poll_data) %></p> <%= poll.formatted_created_at %> </div>
+              <%=link_to t(:poll_add) ,poll_path(poll.id),class:' rounded-md border-b-2 border-rose-300 hover:border-t-2 '  %>
+
+
          </div>
        </div>
-    </div>
-    <div class="flex w-2/3 border-2 border-orange-500 bg-gray-100" >   опи ание</div>
-  </div>
-  <% end %>
-
-
-
-
-
-
-<div class=" mx-36 mt-2 bg-gray-100">
-  <h1> Опросы</h1>
-  <div class="border-2 border-gray-300" >
-
-      <div class="">
-        <h2>  </h2>
-        <h2> </h2>
-
+    <div class="flex flex-col  p-2 w-full md:w-2/3   bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700bg-gray-100" >
+     <div class=" my-2 px-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700bg-gray-100">
+       <div class=" flex flex-col md:flex-row font-serif justify-center" > <p class=" mx-1 md:mx-10 " > Всего участников: <%= @users.count %> </p>   <p class=" mx-1 md:mx-10"><%= t(:poll_do) %> : <%= poll.votes_summary %> </p>   </div>
+          <div class="w-full  bg-gray-200 rounded-r-lg h-5 mb-4 dark:bg-gray-700">
+          <div class="  flex bg-blue-600 h-5  rounded-r-lg" style="width: <%= visualize_poll(poll.votes_summary,@users.count)   %>%">
+         <p class=" ml-10 w-full justify-center   ">  <%=(poll.votes_summary*100)/@users.count %>%</p> </div>
       </div>
+       </div>
 
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+         <div class=" flex flex-col">
+
+       <% poll.vote_options.each do |var| %>
+          <div class="flex w-full">
+            <div> 1</div>
+            <div>2</div>
+          </div>
+       <% end %>
+
+
+         </div>
+        </div>
+    </div>
   </div>
 
-</div>
+<% end %>
+
+
+
+
+
+
+
+

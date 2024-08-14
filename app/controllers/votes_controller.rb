@@ -2,9 +2,10 @@
 
 class VotesController<ApplicationController
   def create
+
     if current_user && params[:poll] && params[:poll][:id] && params[:vote_option] && params[:vote_option][:id]
       @poll = Poll.find_by_id(params[:poll][:id])
-      @option = @poll.vote_options.find_by(params[:vote_option][:id])
+      @option = @poll.vote_options.find(params[:vote_option][:id])
       if @option && @poll && !current_user.voted_for?(@poll)
         @option.votes.create({user_id: current_user.id})
         flash[:notice] = "Answer created!"
