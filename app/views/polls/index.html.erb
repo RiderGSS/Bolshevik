@@ -27,8 +27,8 @@
 
        <% poll.vote_options.each do |var| %>
           <div class="flex w-full">
-            <div> 1</div>
-            <div>2</div>
+            <div>Вариант ответа: <%= var.title %>  </div>
+            <div> Проголосовало за вариант: <%= var.votes.count %>  </div>
           </div>
        <% end %>
 
