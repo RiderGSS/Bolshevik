@@ -1,7 +1,7 @@
 <%= provide :main_menu do %>
-
-  <nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+<div >
+  <nav class=" border-gray-200 dark:bg-gray-900  text-red-600  font-stal  " >
+    <div class="  flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
       <div class=" flex hidden md:block md:py-4  mx-auto max-w-7xl px-4  lg:px-8">
         <%= image_tag( "title.png", :alt => "title") %>
       </div>
@@ -40,8 +40,8 @@
           </div>
          <% else %>
            <div class=" flex w-full justify-end ">
-            <%= link_nav "Вход", new_user_session_path,class:'  border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
-            <%= link_nav "Регистрация",new_user_registration_path,class:'  border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
+            <%= link_nav "Вход", new_user_session_path,class:'text-red-600  border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
+            <%= link_nav "Регистрация",new_user_registration_path,class:' text-red-600 border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
           </div>
          <% end %>
         </div>
@@ -49,7 +49,7 @@
     </div>
   </nav><!-- меню пользователя -->
 
-  <nav >
+  <nav class=" border-gray-200 dark:bg-gray-900 font-stal"  >
     <!--меню -->
 
     <div class=" justify-between mx-auto max-w-7xl px-4 sm:px-4 lg:px-6 backdrop-opacity-10 rounded-lg  bg-white/30  ">
@@ -58,6 +58,10 @@
           <%= link_nav "Главная страница",root_path,class:' border-l-2 border-grey-200 hover:bg-gray-100 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
         </div>
         <div class="ml-10 flex  items-center   space-x-4  ">
+          <span class="relative flex h-6 w-6">
+           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+           <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+          </span>
           <%= link_nav "Пункт меню","#",class:' border-l-2 border-grey-200 hover:bg-gray-100 block rounded-md px-3 py-2 text-base font-medium', link_page:link_page  %>
         </div>
         <% if user_signed_in? %>
@@ -123,4 +127,5 @@
 
 
   </nav>
+</div>
 <%end %>

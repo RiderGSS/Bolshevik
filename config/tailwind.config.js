@@ -11,6 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        'rub': [ "Rubik Bubbles", 'system-ui'],
+        'stal': [ "Stalinist One",'sans-serif'],
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },

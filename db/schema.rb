@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_07_034325) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_21_074937) do
   create_table "areas", force: :cascade do |t|
     t.string "area"
     t.string "name"
@@ -31,6 +31,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_07_034325) do
 
   create_table "polls", force: :cascade do |t|
     t.text "topic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.integer "category"
+    t.string "post"
+    t.string "author"
+    t.string "img", default: "no_image.jpg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
