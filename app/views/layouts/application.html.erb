@@ -19,17 +19,17 @@
 
   </head>
 
-  <body class="h-full">
+  <body >
 
 
   <header >  <%= yield :main_menu %> </header>
 
-   <div class=' border-2 border-gray-300 w-full h-12 flex justify-center shadow-rose-100 shadow-inner '>
+   <div class='  w-full flex justify-center '>
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
    </div>
 
-    <main   >
+    <main class="h-[calc(100vh-270px)]">
       <%= yield %>
     </main>
   <%= render "shared/footer" %>

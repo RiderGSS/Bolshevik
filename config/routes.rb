@@ -6,6 +6,7 @@ Rails.application.routes.draw do
      get 'verificate', on: :member
      resources :areas
     end
+
     resources :polls
     get 'verificate/index'
     get 'index'

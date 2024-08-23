@@ -2,6 +2,7 @@
    before_action :set_user!, except: [:index]
   def index
     @users=User.all
+    @areas=Area.all
   end
    def verificate
      @user.update(verificate: true)
