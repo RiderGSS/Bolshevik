@@ -1,0 +1,73 @@
+
+<div class="border-2 w-full h-full rounded-md shadow-md mt-2 border-gray-500 px-8 ">
+  <div class="relative overflow-x-auto mt-4 border-2 rounded-md shadow-md">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3 rounded-s-lg">
+          <%= t(:topic_poll) %>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%= t(:date_create) %>
+        </th>
+        <th scope="col" class="px-6 py-3 rounded-e-lg">
+          <%= t(:all_poll) %>
+        </th>
+        <th scope="col" class="px-6 py-3 rounded-e-lg">
+          <%= t(:option_poll) %>
+        </th>
+        <th scope="col" class="px-6 py-3 rounded-e-lg">
+
+        </th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <% @polls.each do |poll| %>
+        <tr class="bg-white dark:bg-gray-800">
+
+          <td class="px-6 py-4">
+            <%= poll.topic %>
+          </td>
+
+          <td class="px-6 py-4">
+            <%= poll.formatted_created_at %>
+          </td>
+
+          <td class="px-6 py-4">
+            <%= poll.votes_summary %>
+
+          <td class="px-6 py-4">
+            <%poll.vote_options.each.with_index do |option,index| %>
+              Вариант: <%= index+1 %> -  <%= option.votes.count %>
+            <% end %>
+          </td>
+
+          <td class="px-6 py-4">
+
+            <% if current_user.voted_for?(poll) %>
+
+              <svg class="w-6 h-6 text-gray-800 fill-green-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path  d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
+                <path fill="#fff" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
+              </svg>
+
+
+            <%else %>
+              <%=link_to( poll_path(poll),class:'flex justify-center items-center  w-8 h-8 hover:ring-rose-600 hover:ring-2 text-gray-900 shadow-rose-500 hover:ring-offset-4  hover:shadow-md rounded-full dark:text-white hover:bg-rose-300 dark:hover:bg-gray-700 group',) do %>
+                <%=picture_tag("poll.png",class:'w-6 h-6 ') %>
+              <% end %>
+
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+</div>

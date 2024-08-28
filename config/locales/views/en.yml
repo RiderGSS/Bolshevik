@@ -37,7 +37,8 @@ en:
   poll_add: "Poll"
   poll_do: Voted
   new: News
-  topic_poll: Topic poll
-  date_create: Date create
-  all_poll: All polls
-  option_poll: Option poll
+  topic_poll: "Topic poll"
+  date_create: "Date create"
+  all_poll: "All polls"
+  option_poll: "Option poll"
+  area_nom: "Plot number"

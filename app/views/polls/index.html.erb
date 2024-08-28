@@ -1,75 +1,11 @@
 <% provide(:title, t(:poll)) %>
 <% currently_at t(:poll) %>
-<div class="border-2 w-full h-full   border-gray-500 px-8 ">
-  <div class="relative overflow-x-auto border-rose-400 border-2 rounded-md shadow-md">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
-      <tr>
-        <th scope="col" class="px-6 py-3 rounded-s-lg">
-       <%= t(:topic_poll) %>
-        </th>
-        <th scope="col" class="px-6 py-3">
-          <%= t(:date_create) %>
-        </th>
-        <th scope="col" class="px-6 py-3 rounded-e-lg">
-          <%= t(:all_poll) %>
-        </th>
-        <th scope="col" class="px-6 py-3 rounded-e-lg">
-          <%= t(:option_poll) %>
-        </th>
-        <th scope="col" class="px-6 py-3 rounded-e-lg">
+<div class="flex flex-col w-full px-2">
+     <%= render('shared/hedder_kab') %>
 
-        </th>
-
-      </tr>
-      </thead>
-      <tbody>
-      <% @polls.each do |poll| %>
-      <tr class="bg-white dark:bg-gray-800">
-
-        <td class="px-6 py-4">
-         <%= poll.topic %>
-        </td>
-
-        <td class="px-6 py-4">
-          <%= poll.formatted_created_at %>
-        </td>
-
-        <td class="px-6 py-4">
-          <%= poll.votes_summary %>
-
-        <td class="px-6 py-4">
-          <%poll.vote_options.each.with_index do |option,index| %>
-        Вариант: <%= index+1 %> -  <%= option.votes.count %>
-         <% end %>
-        </td>
-
-        <td class="px-6 py-4">
-
-          <% if current_user.voted_for?(poll) %>
-
-              <%=link_to( poll_path(poll),class:'flex justify-center items-center  w-8 h-8 hover:ring-rose-600 hover:ring-2 text-gray-900 shadow-rose-500 hover:ring-offset-4  hover:shadow-md rounded-full dark:text-white hover:bg-rose-300 dark:hover:bg-gray-700 group',) do %>
-                <%=picture_tag("view.png",class:'w-6 h-6 ') %>
-              <% end %>
-
-          <%else %>
-            <%=link_to( poll_path(poll),class:'flex justify-center items-center  w-8 h-8 hover:ring-rose-600 hover:ring-2 text-gray-900 shadow-rose-500 hover:ring-offset-4  hover:shadow-md rounded-full dark:text-white hover:bg-rose-300 dark:hover:bg-gray-700 group',) do %>
-              <%=picture_tag("poll.png",class:'w-6 h-6 ') %>
-            <% end %>
-
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-      </tbody>
-     </table>
-  </div>
-
-
-
-
-
+     <%= render('polls/polls') %>
 </div>
+
 
 
 
