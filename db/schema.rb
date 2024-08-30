@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_074937) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.integer "category"
+    t.integer "category", default: 3
     t.string "post"
     t.string "author"
     t.string "img", default: "no_image.jpg"

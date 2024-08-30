@@ -1,40 +1,39 @@
 
-<%= turbo_frame_tag "edit_area" do %>
-  <%=  turbo_stream.update "show_area" , content=nil %>
+
   <%= render 'shared/errors', object: @area %>
 <%= form_with  model:[@user, @area] do|f| %>
-<div class=" mx-11 my-3 md:grid  md:grid-cols-4 justify-items-start  gap-1 place-items-stretch p-4 rounded-md border-x-2 border-gray-400 shadow-md shadow-rose-600 ">
+<div class=" m-2  md:grid  md:grid-cols-4 justify-items-start  gap-1 place-items-stretch p-4 rounded-md border-x-2 border-gray-400 shadow-md shadow-rose-600 ">
 
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group col-start-1 col-span-3 " do%>
-    <%= f.text_field :area,disabled: true , data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.text_field :area,disabled: disabled , data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
     <%= f.label "Номер участка",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
          peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
   <% end %>
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group col-start-1 " do%>
-    <%= f.text_field :surname, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.text_field :surname,disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
     <%= f.label "Фамилия",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
          peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
   <% end %>
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
-    <%= f.text_field :name, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.text_field :name,disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
     <%= f.label "Имя",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
          peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
   <% end %>
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
-    <%= f.text_field :patronymic, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.text_field :patronymic,disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
     <%= f.label "Отчество",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
          peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
   <% end %>
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
-    <%= f.telephone_field :telephone, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.telephone_field :telephone, disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
     <%= f.label "Телефон",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
@@ -42,7 +41,7 @@
   <% end %>
 
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
-    <%= f.text_field :address_area, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.text_field :address_area,disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
     <%= f.label "Адрес",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
@@ -50,7 +49,7 @@
   <% end %>
 
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
-    <%= f.text_field :kadastr, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.text_field :kadastr, disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
     <%= f.label "Кадастровый номер",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
@@ -58,12 +57,21 @@
   <% end %>
 
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
-    <%= f.text_field :plot_area, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+    <%= f.text_field :plot_area,disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
-    <%= f.label "Площадь",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+    <%= f.label :plot_area ,data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
          peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
   <% end %>
+  <% if disabled == true %>
+    <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
+      <%= f.text_field :member, disabled: disabled, data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+           dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
+      <%= f.label "член днт",data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+         transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
+         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+    <% end %>
+  <%else %>
   <%= content_tag :div, class:"relative z-0 w-full mb-5 group " do%>
     <%= f.select :member,[["ДА", true], ["HET", false]], data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
@@ -71,11 +79,23 @@
          transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
          peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
   <% end %>
+  <% end %>
+
+  <div class="w-full col-span-1 md:col-span-4 py-2  flex justify-between font-stal text-rose-500 " >
+    <div class="flex  justify-center w-38 rounded-md border-t-2  px-3 py-2.5 text-sm    transition duration-300  ease-in-out  hover:bg-gray-100 hover:border-red-500 hover:shadow-lg hover:shadow-red-500 " >
+      <p> <%=link_to t(:back_to), :back%> </p>   </div>
+ <% if disabled == true %>
+    <div class="flex  justify-center w-38 rounded-md border-t-2  px-3 py-2.5 text-sm   transition duration-300  ease-in-out   hover:bg-gray-100 hover:border-red-500 hover:shadow-lg hover:shadow-red-500 " >
+      <p> <%=link_to t(:'button.edit'),  edit_user_area_path(@area)%> </p></div>
+ <%else %>
+    <div class=" flex  justify-center w-38 rounded-md border-t-2  px-3 py-2.5 text-sm    transition duration-300  ease-in-out   hover:bg-gray-100 hover:border-red-500 hover:shadow-lg hover:shadow-red-500 ">
+      <%= f.submit t(:'button.save')  %>
+    </div>
+
+ <%end %>
+  </div>
 
 </div>
-    <div class=" flex mx-11 justify-center rounded-md border-gray-300 border-b-2 ">
-      <%= f.submit "Сохранить",  class: " mt-3  rounded-md border-t-2  px-3 py-1.5 text-sm font-semibold leading-6 text-gray-400 transition duration-300  ease-in-out  hover:w-full hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      %>
-    </div>
+
+
   <% end %>
-<% end %>

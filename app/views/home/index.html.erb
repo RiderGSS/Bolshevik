@@ -3,9 +3,31 @@
 <% currently_at "Главная страница" %>
 
 
-  <div class=" h-full text-center text-2xl font-stal justify-content-center">
-    <div class="">Большевик  </div>
+  <div class="flex flex-row  w-full text-center text-2xl font-stal justify-content-center">
+  <div class=" w-4/5 ">
 
+
+           jkmitdbr
+
+
+
+
+  </div>
+  <div class="w-1/5 mx-2  flex flex-col  ">
+    <div class="border-2 rounded-t-lg  shadow-inner bg-blue-100 mb-2 " > <p >News</p> </div>
+    <div class="border-2 rounded-t-lg px-2.5 shadow-inner border-grey-500 text-sm font-serif overflow-auto ">
+
+      <% @posts.each do |p| %>
+        <%= content_tag :div, class:["border-2  rounded-b-lg mt-2.5 shadow-lg border-gray-700 hover:border-red-500 hover:shadow-red-500"  ] do%>
+          <%=link_to(post_path(p) )do %>
+            <%= content_tag(:p,p.title  , class:[" border-2 text-centre font-bold"]) %>
+            <%= content_tag(:p,p.post , class:["border-2 text-justify truncate "]) %>
+          <% end %>
+        <%end %>
+
+      <% end %>
+    </div>
+  </div>
 
 
   </div>

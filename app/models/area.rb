@@ -6,4 +6,5 @@ class Area< ApplicationRecord
   #has_many :indications
   validates :area,:name,:kadastr,:surname,:address_area,  presence: true
   validates_uniqueness_of :user_id
+
 end

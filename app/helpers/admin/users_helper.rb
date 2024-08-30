@@ -1,8 +1,8 @@
 module Admin
   module UsersHelper
     def user_roles
-      User.roles.keys.map do |role|
-        [role,  role]
+     User.categories.keys.map.with_index do |ch,idx|
+          [ch, idx]
       end
     end
   end

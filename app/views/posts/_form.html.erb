@@ -17,8 +17,14 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :category %>
-    <%= form.number_field :category, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= content_tag :div, class:"relative z-0 w-full mb-5 group" do%>
+      <%= select_tag :category,options_for_select(post_category,@post.category),  data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
+           dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
+      <%= form.label :category ,data:{for:"floating_email"},class:" mx-4 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+         transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-gray-600
+         peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
+    <% end %>
+
   </div>
 
   <div class="my-5">
@@ -26,10 +32,7 @@
     <%= form.text_field :post, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :author %>
-    <%= form.text_field :author, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
