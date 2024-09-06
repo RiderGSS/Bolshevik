@@ -1,15 +1,18 @@
 <% provide(:title, (t(:log_in))) %>
 <% currently_at t(:log_in) %>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name),class: "space-y-6)") do |f| %>
-  <div class="flex justify-center "> <h1> <%= t(:log_in)%> </h1> </div>
-   <div class=" flex  flex-col md:flex-row min-h-full  justify-center px-3 py-5 lg:px-6">
-   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <%= render "shared/errors", object: resource %>
+<div class="fixed inset-0 z-30 flex items-center bg-gray-900/30 justify-center w-full h-screen p-2">
+    <div class="relative z-20 w-full max-w-2xl max-h-screen overflow-y-auto bg-white shadow-lg rounded-md">
+ <%= form_for(resource, as: resource_name, url: session_path(resource_name),class: "space-y-6)") do |f| %>
+  <div class="flex justify-center font-stal text-red-500 "> <h1> <%= t(:log_in)%> </h1> </div>
+   <div class=" flex flex-col min-h-full  justify-center px-3 py-5 lg:px-6">
+   <div class="sm:mx-auto sm:w-full sm:max-w-sm text-center ">
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
        <div>Ожидается подтверждение регистрации для: <%= resource.unconfirmed_email %></div>
      <% end %>
   </div>
-   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+   <div class="sm:mx-auto sm:w-full sm:max-w-sm mt-4">
       <%= content_tag :div, class:"relative z-0 w-full mb-5 group" do%>
           <%= f.email_field :email, autocomplete: "почта", data: {name:"floating_email", id:"floating_email"}, placeholder:" ", class: "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent rounded-md  border-0 border-l-2  border-gray-300 appearance-none
            dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:border-b-2 focus:ring-0 focus:border-gray-600 peer" %>
@@ -42,7 +45,7 @@
    <div class="flex flex-col  justify-center  " >
       <%= render "devise/shared/links" %>
    <div class=" flex mt-2 justify-center ">
-      <%=link_to( :back,class:'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
+      <%=link_to( root_path,class:'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group',) do %>
       <%=picture_tag("back.png",class:'w-6 h-6 ') %>
       <%= content_tag(:p, t(:back_to),class:'mx-3') %>
       <%end %>
@@ -57,3 +60,5 @@
 
 
   </div>
+  </div>
+</div>

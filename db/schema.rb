@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_21_074937) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_30_081104) do
   create_table "areas", force: :cascade do |t|
     t.string "area"
     t.string "name"
@@ -27,6 +27,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_074937) do
     t.datetime "updated_at", null: false
     t.index ["area"], name: "index_areas_on_area", unique: true
     t.index ["user_id"], name: "index_areas_on_user_id"
+  end
+
+  create_table "indicators", force: :cascade do |t|
+    t.integer "ind", default: 0
+    t.integer "area_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_indicators_on_area_id"
   end
 
   create_table "polls", force: :cascade do |t|
@@ -84,6 +92,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_074937) do
   end
 
   add_foreign_key "areas", "users"
+  add_foreign_key "indicators", "areas"
   add_foreign_key "vote_options", "polls"
   add_foreign_key "votes", "users"
   add_foreign_key "votes", "vote_options"

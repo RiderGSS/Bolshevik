@@ -43,3 +43,6 @@ en:
   option_poll: "Option poll"
   area_nom: "Plot number"
   show_area: "Site card №"
+  indicator: "Meter readings"
+  date_ind: "Date of deposition"
+  action_ind: "Action"

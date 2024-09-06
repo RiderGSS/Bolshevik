@@ -25,6 +25,9 @@
                   class: "block   rounded-md px-3 py-2 text-xs font-medium text-rose-600 hover:bg-red-600 hover:text-white"%>
       <%= link_to t(:area),  user_area_path(current_user,@area),
                class: "block   rounded-md px-3 py-2 text-xs font-medium text-rose-600 hover:bg-red-600 hover:text-white"%>
+      <%= link_to t(:area),  area_indicators_path(current_user) ,data:{turbo_frame:"indicators"},
+               class: "block   rounded-md px-3 py-2 text-xs font-medium text-rose-600 hover:bg-red-600 hover:text-white"%>
+
   </div>
 
 

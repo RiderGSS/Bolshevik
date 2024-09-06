@@ -40,7 +40,7 @@
           </div>
          <% else %>
            <div class=" flex w-full justify-end ">
-            <%= link_nav "Вход", new_user_session_path,class:'text-red-600  border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-xs font-medium', link_page:link_page  %>
+            <%= link_nav "Вход", new_user_session_path, class:'text-red-600  border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-xs font-medium', link_page:link_page  %>
             <%= link_nav "Регистрация",new_user_registration_path,class:' text-red-600 border-l-2 border-grey-200 hover:text-gray-200 block rounded-md px-3 py-2 text-xs font-medium', link_page:link_page  %>
           </div>
          <% end %>
@@ -58,6 +58,7 @@
          <div class="ml-10 flex  items-center   space-x-4">
             <%= link_nav "Пост",posts_path,class:' border-l-2 border-grey-200 hover:bg-gray-100 block rounded-md px-3 py-2 text-xs font-medium', link_page:link_page  %>
         </div>
+
         <% if user_signed_in? %>
            <% if current_user.verificate %>
               <div class="flex">

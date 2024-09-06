@@ -4,7 +4,11 @@ Rails.application.routes.draw do
     resources :users do
      get 'email', on: :member
      get 'verificate', on: :member
-     resources :areas
+     resources :areas,only: %i[index] do
+       resources :indicators
+
+     end
+
     end
 
     resources :polls
@@ -21,6 +25,10 @@ Rails.application.routes.draw do
 
   resources :users do
      resources :areas
+  end
+  resources :areas ,only: %i[index] do
+    resources :indicators
+
   end
 
 
